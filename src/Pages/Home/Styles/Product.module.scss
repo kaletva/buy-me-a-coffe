@@ -1,0 +1,48 @@
+$coffe-color: #E6E0C8;
+$brown-color: #745f3f;
+$black-color: #201b12;
+$white-color: #888784;
+
+.Product {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: $coffe-color;
+    padding: 30px;
+    // border-radius: 10px;
+    background-color: $coffe-color;
+
+    &_image {
+        text-align: center;
+
+        img {
+            width: 70%;
+        }
+    }
+
+    &_name {
+        h1 {
+            color: black;
+        }
+    }
+
+    &_price {
+        color: $white-color;
+    }
+
+    &_buttonGroup {
+        width: 100%;
+        display: flex;
+        gap: 5px;
+        button{
+        }
+        &_btnActive {
+            background-color: $coffe-color;
+            color: rgb(24, 23, 23);
+        }
+
+    }
+
+    &_buyButton {
+    }
+}

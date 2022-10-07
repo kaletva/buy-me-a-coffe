@@ -1,0 +1,16 @@
+.NotFound{
+    width: 100%;
+    height: calc(100vh - 70px);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    &_container{
+        text-align: center;
+        img{
+            width: 200px;
+        }
+        h1{
+            color: #E6E0C8;
+        }
+    }
+}

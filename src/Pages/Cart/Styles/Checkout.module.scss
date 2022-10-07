@@ -1,0 +1,18 @@
+$coffe-color: #E6E0C8;
+
+.Checkout {
+    background-color: $coffe-color;
+    width: 39%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &_icons{
+    }
+    &_payInfo{
+        text-align: right;
+        button{
+            text-transform: uppercase;
+        }
+    }
+}

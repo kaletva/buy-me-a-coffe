@@ -1,0 +1,36 @@
+[
+    {
+        "id": 0,
+        "name": "latte",
+        "img": "src/assets/images/latte.png",
+        "type": "напиток",
+        "price": 90,
+        "params": [
+            "0.2 L"
+        ]
+    },
+    {
+        "id": 1,
+        "name": "donut",
+        "img": "src/assets/images/donut.png",
+        "type": "еда",
+        "price": 120,
+        "params": [
+            "Chocolate",
+            "Caramel"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "espresso",
+        "img": "../images/donut.png",
+        "type": "напиток",
+        "price": 70,
+        "params": [
+            "0.2 L",
+            "0.4 L",
+            "0.6 L",
+            "0.8 L"
+        ]
+    }
+]

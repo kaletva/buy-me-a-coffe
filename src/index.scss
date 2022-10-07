@@ -1,0 +1,77 @@
+$coffe-color: #E6E0C8;
+$brown-color: #745f3f;
+$white-color: #888784;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+body {
+  background-color: black;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1{
+  color: $white-color;
+  font-family: 'Teko', sans-serif;
+}
+h2{
+  font-size: 20px;
+  // font-weight: 700;
+}
+p, a, li{
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 15px;
+}
+
+button, a, select{
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 23px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Teko', sans-serif;
+  transition: all 0.2s ease;
+  border: none;
+  background-color: transparent;
+  color: $white-color;
+  transition: all 0.2s ease;
+  padding: 5px;
+  &:hover {
+    background-color: $coffe-color;
+    color: rgb(24, 23, 23);
+  }
+}
+
+select {
+  font-family: 'Teko', sans-serif;
+  background-color: transparent;
+  border: none;
+  color: $coffe-color;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  -webkit-appearance: none;
+}
+
+.coffe-btn {
+  padding: 5px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 21px;
+}

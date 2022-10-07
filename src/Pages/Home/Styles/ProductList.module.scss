@@ -1,0 +1,31 @@
+$coffe-color: #E6E0C8;
+$brown-color: #745f3f;
+$white-color: #888784;
+.ProductList {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+.loading{
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: calc(100vh - 120px);
+    display: flex;
+    h1{
+        color: black;
+        text-transform: uppercase;
+    }
+}
+@media screen and (max-width: 900px) {
+    .ProductList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 606px) {
+    
+    .ProductList {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

@@ -1,0 +1,33 @@
+$coffe-color: #E6E0C8;
+$brown-color: #745f3f;
+$white-color: #888784;
+.Sort_controlls {
+    display: flex;
+    gap: 10px;
+
+    li {
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-weight: 600;
+        border-radius: 5px;
+        padding: 8px 7px;
+        transition: all 0.2s ease;
+        list-style: none;
+
+        &:hover {
+            color: rgb(24, 23, 23);
+        }
+    }
+
+    &_active {
+        font-weight: 600;
+        text-transform: uppercase;
+        color: rgb(24, 23, 23);
+    }
+
+    &_notActive {
+        background-color: transparent;
+        color: $white-color;
+    }
+
+}

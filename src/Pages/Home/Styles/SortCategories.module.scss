@@ -1,0 +1,41 @@
+.Sort_select {
+    position: relative;
+    &_openBtn{
+        color: black;
+        span{
+            cursor: pointer;
+            color: black;
+            font-weight: 600;
+        }
+        button{
+            border: none;
+            background-color: transparent;
+            display: inline-block;
+            svg{
+                transition: all 0.4s ease;
+                fill: black;
+            }
+        }
+        &_increase{
+            // transform: rotate(-180deg);
+            svg{
+    
+                transform: rotate(180deg);
+            }
+        }
+        &_descending{
+        }
+    }
+    &_controlls{ 
+        position: absolute;
+        right: 0;
+        background-color: #fafafa;
+        padding: 10px;
+        color: black;
+        p{
+            cursor: pointer;
+            padding: 5px 0;
+            
+        }
+    }
+}

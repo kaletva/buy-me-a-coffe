@@ -1,0 +1,15 @@
+.CartProduct{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+    &_product{
+
+    }
+    &_numberButtons{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+}

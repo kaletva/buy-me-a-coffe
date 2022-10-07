@@ -1,0 +1,53 @@
+$coffe-color: #E6E0C8;
+$brown-color: #745f3f;
+$black-color: #201b12;
+$white-color: #888784;
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap');
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+
+    height: 70px;
+    padding: 0px 40px;
+    background-color: black;
+
+    color: $coffe-color;
+    font-weight: 500;
+    font-size: 20px;
+
+    .projectName {
+        text-transform: uppercase;
+
+        a {
+            font-family: 'Teko', sans-serif;
+            font-size: 30px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: $coffe-color;
+        }
+    }
+
+    .actionBtns {
+        display: flex;
+        gap: 20px;
+        font-family: 'Teko', sans-serif;
+        font-size: 20px;
+        letter-spacing: 1px;
+
+        a {
+            cursor: pointer;
+            color: $coffe-color;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        select{
+            color: $white-color;
+        }
+    }
+}
