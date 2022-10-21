@@ -6,11 +6,8 @@ import Cart from './Pages/Cart'
 import Home from './Pages/Home'
 import NotFound from './Pages/NotFound'
 import {
-  BrowserRouter,
-  Switch,
   Routes,
   Route,
-  Link
 } from "react-router-dom";
 
 function App() {

@@ -29,3 +29,9 @@ $white-color: #888784;
         grid-template-columns: repeat(1, 1fr);
     }
 }
+@media screen and (max-width: 500px) {
+    
+    .ProductList {
+        grid-gap: 15px;
+    }
+}

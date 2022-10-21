@@ -3,14 +3,13 @@ $brown-color: #745f3f;
 $white-color: #888784;
 .Sort_controlls {
     display: flex;
-    gap: 10px;
+    gap: 25px;
 
     li {
         cursor: pointer;
         transition: all 0.2s ease;
         font-weight: 600;
         border-radius: 5px;
-        padding: 8px 7px;
         transition: all 0.2s ease;
         list-style: none;
 
@@ -30,4 +29,10 @@ $white-color: #888784;
         color: $white-color;
     }
 
+}
+
+@media screen and (max-width: 400px) {
+    .Sort_controlls {
+        gap: 15px;
+    }
 }

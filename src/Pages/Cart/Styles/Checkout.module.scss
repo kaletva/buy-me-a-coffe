@@ -8,11 +8,13 @@ $coffe-color: #E6E0C8;
     flex-direction: column;
     justify-content: space-between;
     &_icons{
+        
     }
     &_payInfo{
         text-align: right;
         button{
             text-transform: uppercase;
+            width: 100px;
         }
     }
 }

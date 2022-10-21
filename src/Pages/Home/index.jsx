@@ -1,35 +1,30 @@
 import styles from './Styles/Content.module.scss'
 import ProductList from './Components/ProductList';
 import Sort from './Components/Sort'
-import { useState, useEffect } from 'react';
-import {useSelector } from 'react-redux';
-import axios from 'axios';
+import {useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProductsData } from '../../redux/slices/productSlice';
 
 
 
 function Home() {
+    const dispatch = useDispatch()
     const sortControlls = useSelector(state => state.chooseType.value);
     
     const selectedSortType = useSelector(state => state.chooseType.sortInfo)
     const increase = useSelector(state => state.chooseType.sortInfo.increase)
 
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
+    // console.log(useSelector(state => state.cartSlice.cartData))
 
     useEffect(() => {
-        setLoading(true)
-        axios.get(`https://6324bb346f7a75f8b7987bc4.mockapi.io/products?${sortControlls > 0 ? `type=${sortControlls}`: "" }&sortBy=${selectedSortType.sortType}&order=${increase ? 'asc' : 'desc'}`)
-        .then(res => {
-            setData(res.data)
-            setLoading(false)
-        })
+        dispatch(fetchProductsData({sortControlls, selectedSortType, increase}))
     }, [sortControlls, selectedSortType, increase]);
 
 
     return (
         <div className={styles.Content}>
             <Sort/>
-            <ProductList data={data} loading={loading} />
+            <ProductList />
         </div>
     );
 }

@@ -1,12 +1,25 @@
 import styles from '../Styles/Product.module.scss'
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addProductToCart } from '../../../redux/slices/cartSlice';
 function Product({ product }) {
-
+    const dispatch = useDispatch()
     const [chooseSIze, setChooseSIze] = useState(0);
     const chooseP = ((i) => {
         setChooseSIze(i)
     })
     const coffeePrice = ['90', '150', '210', '270']
+    const addToCart = () => {
+        dispatch(addProductToCart({
+            name: product.name, 
+            param: product.params[chooseSIze], 
+            totalPrice: product.type === 1 ?  +coffeePrice[chooseSIze] : product.price,
+            count: 1, 
+            id: product.id + "-" + product.type + "-" + chooseSIze,
+            price: product.type === 1 ?  +coffeePrice[chooseSIze] : product.price
+        }))
+    }
+
     return (
         <div className={styles.Product}>
             <div className={styles.Product_image}>
@@ -26,7 +39,7 @@ function Product({ product }) {
                 }
             </div>
             <div className={styles.Product_buyButton}>
-                <button className='coffe-btn' >Buy</button>
+                <button onClick={() => addToCart()} className='coffe-btn' >Buy</button>
             </div>
         </div>
     );
