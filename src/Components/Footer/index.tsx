@@ -3,7 +3,7 @@ import styles from '../Footer/Footer.module.scss'
 function Footer() {
     return (
         <footer>
-            <div>
+            <div className={styles.footerDiv}>
                 <li>
                     <a href="">My website</a>
                 </li>

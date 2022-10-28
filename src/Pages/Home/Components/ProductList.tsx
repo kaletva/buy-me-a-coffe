@@ -1,16 +1,17 @@
 import styles from '../Styles/ProductList.module.scss'
 import Product from './Product';
-import { useSelector } from 'react-redux';
+
+import { useAppSelector } from '../../../hook';
+
 
 
 function ProductList() {
-    const data = useSelector(state => state.productSlice.productsData)
-    const loading = useSelector(state => state.productSlice.loadStatus)
-    // const err = useSelector(state => state.productSlice.error)
+    const data = useAppSelector(state => state.productSlice.productsData)
+    const loading = useAppSelector(state => state.productSlice.loadStatus)
     return (
-        <>
+        <div>
             {loading === 'resolved' ?
-                <div className={styles.ProductList}>
+                <div className={styles.ProductList} >
                     {data.map((item) => <Product key={item.id} product={item} />)}
                 </div> :
                 <div className={styles.loading}>
@@ -18,7 +19,7 @@ function ProductList() {
                 </div>
             }
 
-        </>
+        </div>
     );
 }
 

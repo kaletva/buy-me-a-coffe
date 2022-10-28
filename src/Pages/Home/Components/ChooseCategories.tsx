@@ -1,11 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux';
 import styles from '../Styles/ChooseCategories.module.scss'
 import { incrementByAmount } from '../../../redux/slices/chooseTypeSlice';
+import { useAppSelector } from '../../../hook';
+
 function ChooseCategories() {
-    const categories = useSelector(state => state.chooseType.categories)
-    const sortControlls = useSelector(state => state.chooseType.value);
+    const categories = useAppSelector(state => state.chooseType.categories)
+    const sortControlls = useAppSelector(state => state.chooseType.value);
     const dispatch = useDispatch()
-    const changeSortControlls  = (i) => {
+    const changeSortControlls  = (i: number) => {
         dispatch(incrementByAmount(i))
     }
     return (

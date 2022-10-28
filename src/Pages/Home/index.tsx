@@ -2,19 +2,17 @@ import styles from './Styles/Content.module.scss'
 import ProductList from './Components/ProductList';
 import Sort from './Components/Sort'
 import {useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductsData } from '../../redux/slices/productSlice';
+import { useAppDispatch, useAppSelector } from '../../hook';
 
 
 
 function Home() {
-    const dispatch = useDispatch()
-    const sortControlls = useSelector(state => state.chooseType.value);
+    const dispatch = useAppDispatch()
+    const sortControlls = useAppSelector(state => state.chooseType.value);
     
-    const selectedSortType = useSelector(state => state.chooseType.sortInfo)
-    const increase = useSelector(state => state.chooseType.sortInfo.increase)
-
-    // console.log(useSelector(state => state.cartSlice.cartData))
+    const selectedSortType = useAppSelector(state => state.chooseType.sortInfo.sortType)
+    const increase = useAppSelector(state => state.chooseType.sortInfo.increase)
 
     useEffect(() => {
         dispatch(fetchProductsData({sortControlls, selectedSortType, increase}))
@@ -22,7 +20,7 @@ function Home() {
 
 
     return (
-        <div className={styles.Content}>
+        <div className={styles.content}>
             <Sort/>
             <ProductList />
         </div>

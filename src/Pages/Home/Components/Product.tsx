@@ -1,27 +1,52 @@
 import styles from '../Styles/Product.module.scss'
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { SetStateAction, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { addProductToCart } from '../../../redux/slices/cartSlice';
-function Product({ product }) {
+import { motion, useIsPresent } from 'framer-motion';
+
+
+interface ProductPropsI {
+    product: {
+        id: number,
+        name: string,
+        img: string,
+        price: number,
+        type: number,
+        params: string[]
+    }
+}
+
+const Product: React.FC<ProductPropsI> = ({ product }) => {
     const dispatch = useDispatch()
     const [chooseSIze, setChooseSIze] = useState(0);
-    const chooseP = ((i) => {
+    const chooseP = ((i: SetStateAction<number>) => {
         setChooseSIze(i)
     })
     const coffeePrice = ['90', '150', '210', '270']
     const addToCart = () => {
         dispatch(addProductToCart({
-            name: product.name, 
-            param: product.params[chooseSIze], 
-            totalPrice: product.type === 1 ?  +coffeePrice[chooseSIze] : product.price,
-            count: 1, 
+            name: product.name,
+            param: product.params[chooseSIze],
+            totalPrice: product.type === 1 ? +coffeePrice[chooseSIze] : product.price,
+            count: 1,
             id: product.id + "-" + product.type + "-" + chooseSIze,
-            price: product.type === 1 ?  +coffeePrice[chooseSIze] : product.price
+            price: product.type === 1 ? +coffeePrice[chooseSIze] : product.price
         }))
     }
 
+
+    const isPresent = useIsPresent()
+
+    const variants = {
+        closed: {
+            opacity: 0
+        },
+        resolved: {
+            opacity: 1
+        }
+    }
     return (
-        <div className={styles.Product}>
+        <motion.div className={styles.Product} variants={variants} animate={isPresent ? "resolved" : "closed"} >
             <div className={styles.Product_image}>
                 <img src={product.img} alt="" />
             </div>
@@ -38,10 +63,10 @@ function Product({ product }) {
                     ))
                 }
             </div>
-            <div className={styles.Product_buyButton}>
+            <div >
                 <button onClick={() => addToCart()} className='coffe-btn' >Buy</button>
             </div>
-        </div>
+        </motion.div>
     );
 }
 

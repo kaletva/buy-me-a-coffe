@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
@@ -10,14 +10,14 @@ import {
   Route,
 } from "react-router-dom";
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/buy-me-a-coffe" element={<Home />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/buy-me-a-coffe/cart" element={<Cart />} />
       </Routes>
       <Footer />
     </div>

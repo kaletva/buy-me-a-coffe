@@ -3,23 +3,24 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSortInfo } from '../../../redux/slices/chooseTypeSlice';
 import { changeIncrease } from '../../../redux/slices/chooseTypeSlice';
+import { useAppDispatch, useAppSelector } from '../../../hook';
 
 function SortCategories() {
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
 
-    const selected = useSelector(state => state.chooseType.sortInfo)
+    const selected = useAppSelector(state => state.chooseType.sortInfo)
 
-    // inc/dec сортировка
+    // inc/dec sort
     const setIncrease = () => dispatch(changeIncrease(!selected.increase))
 
-    const select = (data) => {
+    
+    const select = (data: { sortType: string; increase: boolean; }) => {
         dispatch(setSortInfo(data))
-        //закрытие сорт
+        //close sort
         setSortSelect(false)
     }
 
 
-    //виды сортировки
     const selectCategories = [
         { sortType: 'price', increase: true },
         { sortType: 'name', increase: true }
