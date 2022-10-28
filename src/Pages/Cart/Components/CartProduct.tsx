@@ -1,8 +1,6 @@
 import styles from '../Styles/CartProduct.module.scss'
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { decrementProductCount, deleteProduct, incrementProductCount } from '../../../redux/slices/cartSlice';
-import { useAppSelector } from '../../../hook';
+import { useAppDispatch } from '../../../hook';
 
 
 interface CartProductProps {
@@ -17,7 +15,7 @@ interface CartProductProps {
 }
 
 const CartProduct: React.FC<CartProductProps> =({productData, productIndex})  =>{
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
     
     const deleteEl = () => {
         dispatch(deleteProduct(productIndex))

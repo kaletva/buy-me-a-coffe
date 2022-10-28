@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk} from '@reduxjs/toolkit'
 
 type fetchValueTypes = {
     sortControlls: number,
@@ -66,17 +66,6 @@ const productSlice = createSlice({
             state.loadStatus = 'rejected'
             state.error = action.payload
         })
-        // [fetchProductsData.pending]: (state) => {
-            //     state.loadStatus = 'loading'
-            // },
-        // [fetchProductsData.fulfilled]: (state, action) => {
-        //     state.productsData = action.payload
-        //     state.loadStatus = 'resolved'
-        // },
-        // [fetchProductsData.rejected]: (state, action) => {
-        //     state.loadStatus = 'rejected'
-        //     state.error = action.payload
-        // }
     }
 });
 

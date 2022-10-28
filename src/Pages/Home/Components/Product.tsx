@@ -1,8 +1,8 @@
 import styles from '../Styles/Product.module.scss'
 import { SetStateAction, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { addProductToCart } from '../../../redux/slices/cartSlice';
 import { motion, useIsPresent } from 'framer-motion';
+import { useAppDispatch } from '../../../hook';
 
 
 interface ProductPropsI {
@@ -17,7 +17,7 @@ interface ProductPropsI {
 }
 
 const Product: React.FC<ProductPropsI> = ({ product }) => {
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
     const [chooseSIze, setChooseSIze] = useState(0);
     const chooseP = ((i: SetStateAction<number>) => {
         setChooseSIze(i)

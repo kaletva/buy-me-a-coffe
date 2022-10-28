@@ -8,13 +8,13 @@ function Checkout() {
     }, 0))
     const [hoverBtn, setHoverBtn] = useState(false)
     return ( 
-        <div className={styles.checkout}>
+        <div className={styles.Checkout}>
             <div>
                 <h1>Total</h1>
                 <h2>{total} Rub</h2>
             </div>
             <div></div>
-            <div className={styles.checkout_payInfo}>
+            <div className={styles.Checkout_payInfo}>
                 <button onMouseEnter={()=> setHoverBtn(true)} onMouseLeave={() => setHoverBtn(false)}>
                     {hoverBtn ? 'soon' : "checkout"}
                 </button>

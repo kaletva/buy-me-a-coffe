@@ -1,2 +1,2 @@
-export const notFound: string;
-export const notFoundContainer: string;
+export const NotFound: string;
+export const NotFound_container: string;

@@ -26,7 +26,6 @@ function SortCategories() {
         { sortType: 'name', increase: true }
     ]
 
-    //выбор сортировки
     const [sortSelect, setSortSelect] = useState(false);
     return (
         <div className={styles.Sort_select}>
